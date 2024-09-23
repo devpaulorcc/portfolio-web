@@ -1,0 +1,23 @@
+.footer{
+    width: 100%;
+    padding: 2rem;
+    background-color: #121214;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-icons{
+    display: flex;
+    gap: 0.8rem;
+}
+
+.icon{
+    width: 25px;
+    height: 25px;
+    color: #fff;
+    transition: all 0.5s;
+}
+
+.icon:hover{
+    color: #bf55fa;
+}

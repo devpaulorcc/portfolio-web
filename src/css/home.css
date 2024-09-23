@@ -1,0 +1,43 @@
+.title-page{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.section-ocupation{
+    margin: 7rem;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: start;
+}
+
+.section-ocupation > h2 {
+    font-size: 3rem;
+}
+
+#photo-profile{
+    width: 400px;
+}
+
+
+@media (max-width: 850px){
+    .section-main{
+        flex-direction: column;
+    }
+    
+    .section-ocupation{
+        margin: 0;
+        padding: 2rem;
+    }
+
+    .section-ocupation > h2 {
+        font-size: 2rem;
+    }
+
+    .section-ocupation > p {
+        font-size: 1.3rem;
+    }
+}
