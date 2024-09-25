@@ -1,0 +1,34 @@
+.section-fan{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.section-fan > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../img/card.svg");
+    background-position: center;
+    background-size: cover;
+    padding: 3rem 2rem;
+    margin: 3rem;
+    color: #fefefe;
+    border: 1px solid #bf55fa;
+    width: 33%;
+    text-align: center;
+}
+
+.section-fan > div > p{
+    font-size: 3rem;
+}
+
+
+@media (max-width: 430px){
+    .section-fan{
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+}
