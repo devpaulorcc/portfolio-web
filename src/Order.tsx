@@ -10,18 +10,41 @@ function Order() {
     order: "",
   });
 
+  const [errors, setErrors] = useState({
+    full_name: false,
+    email: false,
+    order: false,
+  });
+
   const navigate = useNavigate();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
       [name]: value,
     });
+    setErrors({
+      ...errors,
+      [name]: false, // Limpa o erro quando o usuário começa a digitar
+    });
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Verificar se todos os campos estão preenchidos
+    const newErrors = {
+      full_name: formData.full_name.trim() === "",
+      email: formData.email.trim() === "",
+      order: formData.order.trim() === "",
+    };
+
+    // Se algum campo estiver vazio, não envia o formulário
+    if (newErrors.full_name || newErrors.email || newErrors.order) {
+      setErrors(newErrors);
+      return;
+    }
 
     const { full_name, email, order } = formData;
 
@@ -29,18 +52,16 @@ function Order() {
     const password_app = "yfyj nfdu yllx gxem";
 
     try {
-    const recipient = encodeURIComponent("dev.paulorc@gmail.com"); 
-    const subject = encodeURIComponent(`Orçamento solicitado por ${full_name}`);
-      
-    const message = encodeURIComponent(`Email para contato: ${email}\n\nDescrição do pedido:\n${order}`);
+      const recipient = encodeURIComponent("dev.paulorc@gmail.com");
+      const subject = encodeURIComponent(`Orçamento solicitado por ${full_name}`);
+      const message = encodeURIComponent(`Email para contato: ${email}\n\nDescrição do pedido:\n${order}`);
+      const apiUrl = `https://paulorcc.pythonanywhere.com/api/${sender}/${password_app}/${recipient}/${subject}/${message}`;
 
-    const apiUrl = `https://paulorcc.pythonanywhere.com/api/${sender}/${password_app}/${recipient}/${subject}/${message}`;
-
-    await axios.get(apiUrl);
-    
+      await axios.get(apiUrl);
     } catch (error) {
       console.error("Erro na requisição:", error);
     }
+
     navigate("/");
   };
 
@@ -88,6 +109,7 @@ function Order() {
               value={formData.full_name}
               onChange={handleChange}
             />
+            {errors.full_name && <span className="error-message font-alert">Nome completo é obrigatório</span>}
           </div>
           <div>
             <label htmlFor="email">
@@ -102,6 +124,7 @@ function Order() {
               value={formData.email}
               onChange={handleChange}
             />
+            {errors.email && <span className="error-message font-alert">E-mail é obrigatório</span>}
           </div>
           <div>
             <label htmlFor="order">
@@ -115,6 +138,7 @@ function Order() {
               value={formData.order}
               onChange={handleChange}
             ></textarea>
+            {errors.order && <span className="error-message font-alert">Descrição do pedido é obrigatória</span>}
           </div>
           <button className="button-submit" type="submit">
             PEDIR ORÇAMENTO
