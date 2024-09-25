@@ -21,8 +21,8 @@ function Header() {
                 </a>
               </li>
               <li>
-                <a href="/depoimentos">
-                  Depoimentos
+                <a href="/orcamentos">
+                  Orçamento
                 </a>
               </li>
               <li>

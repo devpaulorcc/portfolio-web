@@ -30,6 +30,9 @@
     .section-fan{
         flex-direction: column;
         align-items: center;
-        gap: 2rem;
+        gap: 0.5rem;
+    }
+    .section-fan > div{
+        width: 50%;
     }
 }

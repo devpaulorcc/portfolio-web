@@ -1,0 +1,88 @@
+.section-order{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 4rem;
+    margin-bottom: 12rem;
+}
+
+.div-service{
+    display: flex;
+    flex-direction: column;
+}
+
+.f-2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.div-service > ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 0.3rem;
+    color: #fefefe;
+    font-weight: bold;
+}
+
+.div-form{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+}
+
+.div-form > form {
+    display: flex;
+    flex-direction: column;
+}
+
+.div-form > form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.div-form > form > div > label{
+    color: #fefefe;
+}
+
+.font-alert{
+    color: #c40000;
+    font-weight: bold;
+}
+
+.form-input{
+    width: auto;
+    padding: 0.5rem;
+    border: 0;
+    border-radius: 0.5rem;
+    background-color: #fefefe;
+}
+
+.button-submit{
+    background-color: #3cbcc2;
+    width: auto;
+    padding: 1rem 2rem;
+    color: #fefefe;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.5s;
+    text-align: center;
+}
+
+.button-submit:hover{
+    background-color: #bf55fa;
+}
+
+@media (max-width: 890px){
+    .section-order{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .div-form {
+        width: 80%;
+    }
+}

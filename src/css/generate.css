@@ -1,0 +1,39 @@
+.div-generate{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.div-generate > h4 {
+    font-size: 3rem;
+}
+
+.button-generate {
+    background: linear-gradient(to right, #bf55fa, #3cbcc2);
+    padding: 2rem 4rem;
+    border-radius: 2rem;
+    color: #fefefe;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: all 1s;
+}
+
+.button-generate:hover{
+    background: linear-gradient(to right, #3cbcc2, #bf55fa);
+    color: #fefefe;
+}
+
+@media (max-width: 660px){
+    .div-generate{
+        text-align: center;
+    }
+    .button-generate{
+        width: 45%;
+    }
+}

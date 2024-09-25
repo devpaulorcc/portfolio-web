@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./css/fan.css";
 
 function Fan({ works = 0 , experience = 0, certificate = 0}) {

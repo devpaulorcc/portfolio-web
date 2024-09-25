@@ -1,22 +1,24 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-
-import Header from './Header'
-import Home from './Home'
-import Introduce from './Introduce'
-import Fan from './Fan'
-import Footer from './Footer'
-import './css/header.css'
-import './css/footer.css'
-import './css/reset.css'
+import Header from './Header';
+import Index from './Index';
+import Order from './Order';
+import Footer from './Footer';
+import './css/header.css';
+import './css/footer.css';
+import './css/reset.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Header />
-    <Home />
-    <Introduce />
-    <Fan works={10} experience={1} certificate={17}/>
-    <Footer />
-  </StrictMode>,
-  )
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/orcamentos" element={<Order />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
+  </StrictMode>
+);

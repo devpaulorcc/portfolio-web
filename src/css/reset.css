@@ -11,9 +11,10 @@ body{
     background-color: #0c0c1a;
 }
 
-ul, li, a , button{
+ul, li, a , button, input{
     all: unset;
 }
+
 
 .button-special{
     color: #fefefe;
