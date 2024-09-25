@@ -6,7 +6,6 @@ import "./css/order.css";
 function Order() {
   const [formData, setFormData] = useState({
     full_name: "",
-    // telephone_number: "",
     email: "",
     order: "",
   });
@@ -27,25 +26,22 @@ function Order() {
     const { full_name, email, order } = formData;
 
     const sender = "dev.paulorc@gmail.com";
-    const password_app = "yfyj nfdu yllx gxem"; 
+    const password_app = "yfyj nfdu yllx gxem";
 
     try {
-      const recipient = encodeURIComponent(email);
-      const subject = encodeURIComponent(full_name);
-      const message = encodeURIComponent(order);
+    const recipient = encodeURIComponent("dev.paulorc@gmail.com"); 
+    const subject = encodeURIComponent(`Orçamento solicitado por ${full_name}`);
+      
+    const message = encodeURIComponent(`Email para contato: ${email}\n\nDescrição do pedido:\n${order}`);
 
-      const apiUrl = `https://paulorcc.pythonanywhere.com/api/${sender}/${password_app}/${recipient}/${subject}/${message}`;
+    const apiUrl = `https://paulorcc.pythonanywhere.com/api/${sender}/${password_app}/${recipient}/${subject}/${message}`;
 
-      const response = await axios.get(apiUrl);
-
-      if (response.status === 200) {
-        navigate("/");
-      } else {
-        console.error("Erro ao enviar o formulário");
-      }
+    await axios.get(apiUrl);
+    
     } catch (error) {
       console.error("Erro na requisição:", error);
     }
+    navigate("/");
   };
 
   return (
@@ -93,21 +89,6 @@ function Order() {
               onChange={handleChange}
             />
           </div>
-          {/* <div>
-            <label htmlFor="telephone_number">
-              Seu melhor número para contato{" "}
-              <span className="font-alert">*</span>
-            </label>
-            <input
-              className="form-input"
-              type="text"
-              name="telephone_number"
-              id="telephone_number"
-              placeholder="Digite seu melhor número para contato..."
-              value={formData.telephone_number}
-              onChange={handleChange}
-            />
-          </div> */}
           <div>
             <label htmlFor="email">
               Seu melhor e-mail para contato <span className="font-alert">*</span>
