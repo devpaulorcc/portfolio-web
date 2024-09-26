@@ -6,6 +6,7 @@ import Header from './Header';
 import Index from './Index';
 import Order from './Order';
 import Footer from './Footer';
+import Error from './Error';
 import './css/header.css';
 import './css/footer.css';
 import './css/reset.css';
@@ -17,6 +18,7 @@ createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/orcamentos" element={<Order />} />
+        <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
     </BrowserRouter>

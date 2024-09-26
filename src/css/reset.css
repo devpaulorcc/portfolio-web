@@ -16,6 +16,8 @@ ul, li, a , button, input{
 }
 
 
+
+
 .button-special{
     color: #fefefe;
     font-weight: bold;
@@ -54,3 +56,13 @@ a:hover{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.section-center{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
