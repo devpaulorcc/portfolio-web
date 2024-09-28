@@ -26,19 +26,21 @@ function Order() {
     });
     setErrors({
       ...errors,
-      [name]: false,
+      [name]: false, // Limpa o erro quando o usuário começa a digitar
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Verificar se todos os campos estão preenchidos
     const newErrors = {
       full_name: formData.full_name.trim() === "",
       email: formData.email.trim() === "",
       order: formData.order.trim() === "",
     };
 
+    // Se algum campo estiver vazio, não envia o formulário
     if (newErrors.full_name || newErrors.email || newErrors.order) {
       setErrors(newErrors);
       return;
