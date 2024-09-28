@@ -2,7 +2,7 @@
     display: flex;
     width: 100%;
     justify-content: space-around;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
 .section-fan > div {
@@ -14,7 +14,7 @@
     background-position: center;
     background-size: cover;
     padding: 3rem 2rem;
-    margin: 3rem;
+    margin: 4rem;
     color: #fefefe;
     border: 1px solid #bf55fa;
     width: 33%;
@@ -22,7 +22,7 @@
 }
 
 .section-fan > div > p{
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 

@@ -1,6 +1,7 @@
 import './css/reset.css'
 import './css/header.css'
 import myLogo from './img/logo.svg';
+import Theme from './Theme';
 
 function Header() {
 
@@ -31,6 +32,9 @@ function Header() {
                     Entre em Contato
                   </button>
                 </a>
+              </li>
+              <li>
+                <Theme />
               </li>
             </ul>
           </nav>

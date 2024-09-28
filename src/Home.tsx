@@ -7,8 +7,8 @@ function Home() {
       <section className="section-main">
         <div className="title-page section-ocupation">
           <h2 className="font-special">Meu nome é Paulo!</h2>
-          <p className="font-white">
-            Impulsionando o futuro com <span className="font-special">inovação e tecnologia</span>
+          <p className="font-black">
+            <span className="font-special">Impulsionando o futuro com inovação e tecnologia</span>
           </p>
         </div>
         <div className='section-ocupation'>
